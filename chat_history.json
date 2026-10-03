@@ -1,0 +1,742 @@
+[
+  {
+    "id": "b6839038-f1f4-4b58-9b2c-9b8cf9647949",
+    "title": "hello",
+    "messages": [
+      {
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "role": "assistant",
+        "content": "Hi! I'm your MultiPDF learning assistant. Upload your PDFs and ask me questions.",
+        "sources": []
+      },
+      {
+        "role": "user",
+        "content": "explain about process scheduling"
+      },
+      {
+        "role": "assistant",
+        "content": "Process scheduling is the way an operating system decides which process gets the CPU and when.  \nThe **short‑term scheduler** picks a process from the ready queue and gives it the CPU. While the process runs, one of several events can happen:\n\n* **I/O request** – the process needs an I/O device, so it moves to a device queue and later returns to the ready queue.  \n* **Time slice expired** – the process has used its allotted CPU time (time quantum) and is moved back to the ready queue.  \n* **Fork a child process** – the running process creates a new child; both run independently.  \n* **Wait for an interrupt** – the process pauses until an external event occurs.\n\n### Common scheduling algorithms\n\n| Algorithm | Type | How it works |\n|-----------|------|--------------|\n| **Round Robin (RR)** | Preemptive | Each process gets a fixed time quantum (TQ). If it doesn’t finish in that time, it’s preempted and moved to the end of the ready queue. The CPU then selects the next process. |\n| **Priority Scheduling** | Non‑preemptive or preemptive | Each process has a priority number. The CPU is given to the highest‑priority process. In non‑preemptive mode, once a process starts it runs to completion. In preemptive mode, a higher‑priority process can interrupt a running one. If two processes share the same priority, first‑come‑first‑served (FCFS) is used. |\n\nThese algorithms help the operating system manage CPU time efficiently, ensuring that processes run fairly and that high‑priority or interactive tasks receive timely attention.",
+        "sources": [
+          {
+            "page": 29,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 14,
+            "source": "os2-3.pdf"
+          },
+          {
+            "page": 11,
+            "source": "os2-3.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "what is deadlock?"
+      },
+      {
+        "role": "assistant",
+        "content": "A deadlock is a situation in which two or more processes are each waiting for a resource that the other processes hold, forming a cycle of dependencies. Because every process in the cycle is waiting for another, none can proceed, and the system is stuck. In a Wait‑for Graph, a deadlock exists exactly when the graph contains a cycle.",
+        "sources": [
+          {
+            "page": 1,
+            "source": "os4-3.pdf"
+          },
+          {
+            "page": 2,
+            "source": "os4-3.pdf"
+          },
+          {
+            "page": 18,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 18,
+            "source": "os2.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "differentiate big data and machine learning"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 6,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "differentiate between big data and machine learning"
+      },
+      {
+        "role": "assistant",
+        "content": "**Big Data vs. Machine Learning**\n\n| Feature | Big Data | Machine Learning |\n|---------|----------|------------------|\n| **What it is** | Extremely large, complex datasets that can’t be handled by traditional tools. | Algorithms that learn patterns from data to make predictions or decisions. |\n| **Key focus** | Volume, velocity, variety of data; storage and real‑time processing (e.g., Hadoop, Spark, Kafka). | Learning from data to automate decisions, personalize experiences, and forecast outcomes. |\n| **Typical technologies** | Distributed file systems (HDFS), cloud storage (AWS S3, Azure Blob), NoSQL databases (MongoDB, Cassandra). | AI/ML frameworks that run on top of Big Data platforms; often integrated with Spark or Hadoop. |\n| **Primary goal** | Capture, store, and process massive amounts of data efficiently. | Extract useful insights or predictions from that data. |\n| **Relationship** | Big Data provides the raw material; Machine Learning uses that material to build models and generate insights. | Machine Learning operates on Big Data but can also work with smaller, structured datasets. |\n\nIn short, **Big Data is about the size, speed, and variety of data and the tools needed to manage it, while Machine Learning is about the techniques that analyze that data to learn and make decisions.**",
+        "sources": [
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 6,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "what is big data analytics"
+      },
+      {
+        "role": "assistant",
+        "content": "Big Data analytics is the process of examining large and complex datasets to find useful patterns, trends, and insights that help in making better decisions.",
+        "sources": [
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 7,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 2,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "explain big data"
+      },
+      {
+        "role": "assistant",
+        "content": "**Big Data** is the term for extremely large, complex data sets that can’t be handled well by traditional tools.  \nIt is usually described by the **Three V’s**:\n\n| V | Meaning | Key Question |\n|---|---------|--------------|\n| **Volume** | Huge amount of data | How much data? |\n| **Velocity** | Speed of data flow | How fast is it coming? |\n| **Variety** | Different types of data | What kind of data? |\n\n### How it has evolved\n- **Early days**: small, structured data in spreadsheets.  \n- **Now**: massive, real‑time data from sensors, social media, smart devices, and more.\n\n### Storing Big Data\n1. **Distributed Storage** – data is split into chunks and spread across many machines (e.g., Hadoop Distributed File System, HDFS).  \n2. **Cloud Storage** – scalable, cost‑effective, and accessible from anywhere (AWS S3, Azure Blob, Google Cloud).  \n3. **NoSQL Databases** – handle flexible, unstructured data (MongoDB, Cassandra, Redis).  \n4. **Data Lakes** – store raw data for analytics and AI (AWS S3, Azure Data Lake).\n\n### Big Data Analytics\nThe process of examining these large, complex data sets to find patterns, trends, and insights that help make better decisions. Tools used include HDFS, Amazon S3, Google BigQuery, Apache Cassandra, and MongoDB.\n\n### Integration with Modern Tech\nBig Data works closely with AI, Machine Learning, and IoT. Devices like smartwatches and sensors generate continuous streams, while tools such as Apache Kafka and Spark Streaming provide real‑time insights. The focus is on automation, prediction, personalization, and intelligent decision‑making.",
+        "sources": [
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 7,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "explain about storing of big data"
+      },
+      {
+        "role": "assistant",
+        "content": "**Storing Big Data**\n\n| Storage type | What it does | Typical examples | Why it’s useful |\n|--------------|--------------|------------------|-----------------|\n| **Distributed File System** | Splits huge files into small chunks and spreads them across many machines. If one machine fails, the data is still available from others. | Hadoop Distributed File System (HDFS) | Fault‑tolerant, can handle petabytes of data |\n| **Cloud Storage** | Provides on‑demand, scalable, and cost‑effective storage that can be accessed from anywhere. | AWS S3, Azure Blob, Google Cloud Storage | Easy to scale, pay only for what you use, highly accessible |\n| **NoSQL Databases** | Stores flexible, large, unstructured data with a schema that can change over time. | MongoDB, Cassandra, Redis | Handles semi‑structured and unstructured data, supports high write rates |\n| **Data Lakes** | Stores raw data in its native format for later analytics and AI. | AWS S3, Azure Data Lake | Keeps data “as‑is” so it can be used for many different analyses |\n\n**Key points**\n\n- **Distributed storage** (e.g., HDFS) breaks data into chunks and spreads them across a cluster, giving fault tolerance and parallel processing.\n- **Cloud storage** offers scalable, cost‑effective, and globally accessible storage.\n- **NoSQL databases** and **data lakes** allow you to keep data without rigid schemas, making it easier to handle diverse data types.\n- These methods together enable big‑data systems to store, access, and process massive volumes of data efficiently.",
+        "sources": [
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 2,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 10,
+            "source": "bigdata.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "0cfac21c-c2cf-4ab8-995f-b8ebb95bbbdd",
+    "title": "what is css",
+    "messages": [
+      {
+        "role": "user",
+        "content": "what is css"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 10,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 3,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 4,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 11,
+            "source": "webtechnologies1.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "define css"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 10,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 11,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 3,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 12,
+            "source": "webtechnologies1.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8e55c0cc-b5d1-40b7-835e-68b937d1e5d9",
+    "title": "explain about image attribute in html",
+    "messages": [
+      {
+        "role": "user",
+        "content": "explain about image attribute in html"
+      },
+      {
+        "role": "assistant",
+        "content": "**Image attributes in HTML**\n\n| Attribute | What it does |\n|-----------|--------------|\n| **src** | Specifies the URL or path of the image (required). |\n| **alt** | Provides alternate text that describes the image; shown if the image can’t load. |\n| **tooltip** | Displays a tooltip when you hover over the image. |\n| **width** | Sets the image width (in pixels or percent). |\n| **height** | Sets the image height (in pixels or percent). |\n| **align** | Aligns the image (top, bottom, left, right, middle). *Deprecated in HTML5; use CSS instead.* |\n| **border** | Sets the border thickness around the image. *Deprecated in HTML5; use CSS instead.* |\n\n**Path types for the `src` attribute**\n\n1. **Relative Path** – points to an image in the same folder or a sub‑folder.  \n   ```html\n   <img src=\"image.jpg\" alt=\"Same folder\">\n   <img src=\"images/photo.jpg\" alt=\"Images subfolder\">\n   <img src=\"../photo.jpg\" alt=\"Parent folder\">\n   ```\n\n2. **Absolute Path** – uses the full URL to the image.  \n   ```html\n   <img src=\"https://www.example.com/images/logo.png\" alt=\"Company Logo\">\n   ```\n\nThese attributes let you control where the image comes from, how it’s described, and how it appears on the page.",
+        "sources": [
+          {
+            "page": 3,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 1,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 2,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 4,
+            "source": "webtechnologies3.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "example program for html tag"
+      },
+      {
+        "role": "assistant",
+        "content": "Here’s a very simple HTML “program” that shows a heading, a paragraph, and an image:\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n    <title>Example HTML Tag</title>\n</head>\n<body>\n    <h1>Welcome to My Page</h1>\n    <p>This is a short paragraph that explains what the page is about.</p>\n    <img src=\"example.jpg\" alt=\"An example image\">\n</body>\n</html>\n```\n\n- `<h1>` creates a large heading.  \n- `<p>` creates a paragraph of text.  \n- `<img>` displays an image (the `src` attribute points to the image file, and `alt` provides alternative text).",
+        "sources": [
+          {
+            "page": 6,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 2,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 14,
+            "source": "webtechnologies3.pdf"
+          },
+          {
+            "page": 15,
+            "source": "webtechnologies3.pdf"
+          },
+          {
+            "page": 7,
+            "source": "webtechnologies1.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "explain about form submission methods"
+      },
+      {
+        "role": "assistant",
+        "content": "**Form submission methods**\n\n| Method | How data is sent | Visibility | Size limit | Typical use |\n|--------|------------------|------------|------------|-------------|\n| **GET** | Appends data to the URL (e.g., `search.php?query=example`) | Visible in the address bar | Limited | Search forms, non‑sensitive data |\n| **POST** | Sends data in the request body | Not visible in the URL | No size limit | Login, registration, file uploads |\n\n- The `<form>` element’s `method` attribute can be set to either `get` or `post`.  \n- `GET` is best for retrieving data without changing server state.  \n- `POST` is used when data should not appear in the URL or when large amounts of data (e.g., files) need to be sent.",
+        "sources": [
+          {
+            "page": 5,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 6,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 15,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 9,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 5,
+            "source": "webtechnologies2.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "41485b14-a3b2-4f2e-9640-9122b1db17a6",
+    "title": "hello",
+    "messages": [
+      {
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "role": "assistant",
+        "content": "Hi! I'm your MultiPDF learning assistant. Upload your PDFs and ask me questions.",
+        "sources": []
+      }
+    ]
+  },
+  {
+    "id": "e852ddb0-6445-4a4c-9ad6-a569debb1add",
+    "title": "hello",
+    "messages": [
+      {
+        "role": "user",
+        "content": "hello"
+      },
+      {
+        "role": "assistant",
+        "content": "Hi! I'm your MultiPDF learning assistant. Upload your PDFs and ask me questions.",
+        "sources": []
+      },
+      {
+        "role": "user",
+        "content": "explain deadlock"
+      }
+    ]
+  },
+  {
+    "id": "a81ba932-21c8-4dff-bd57-2405bd2f0645",
+    "title": "hi",
+    "messages": [
+      {
+        "role": "user",
+        "content": "hi"
+      },
+      {
+        "role": "assistant",
+        "content": "Hi! I'm your MultiPDF learning assistant. Upload your PDFs and ask me questions.",
+        "sources": []
+      },
+      {
+        "role": "user",
+        "content": "what is the difference between machine learning and big data"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 10,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "difference between  big data and machine learning"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 10,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "Differences between big data and machine learning"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 10,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "what is cs"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 2,
+            "source": "os2-3.pdf"
+          },
+          {
+            "page": 10,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 2,
+            "source": "dbms2.pdf"
+          },
+          {
+            "page": 2,
+            "source": "os1.pdf"
+          },
+          {
+            "page": 3,
+            "source": "os2-2.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "what is process scheduling"
+      },
+      {
+        "role": "assistant",
+        "content": "Process scheduling is the method by which the operating system decides which process gets to use the CPU next. It keeps the CPU busy, prevents idle time, allows other processes to run while one is waiting for I/O, and overall improves system performance.",
+        "sources": [
+          {
+            "page": 14,
+            "source": "os2-3.pdf"
+          },
+          {
+            "page": 24,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 24,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 29,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 11,
+            "source": "os2-3.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "differences between big data and machine learning"
+      },
+      {
+        "role": "assistant",
+        "content": "**Big Data vs. Machine Learning**\n\n| Aspect | Big Data | Machine Learning |\n|--------|----------|------------------|\n| **What it is** | Extremely large, complex datasets that are hard to store, process, or analyze with traditional tools. | Algorithms and models that learn patterns or predictions from data. |\n| **Key focus** | Volume, Velocity, Variety – how much data, how fast it arrives, and the different types of data. | Learning from data to make decisions, predictions, or classifications. |\n| **Typical tools** | Hadoop, Spark, HDFS, NoSQL databases, cloud storage (AWS S3, Azure Blob). | Scikit‑learn, TensorFlow, PyTorch, Spark MLlib, etc. |\n| **Purpose** | Store and process huge amounts of raw or semi‑structured data for analytics and AI. | Build models that can analyze data, find patterns, and make predictions or decisions. |\n| **Relationship** | Big Data provides the large, varied, fast‑moving datasets that machine‑learning models need to learn from. | Machine learning uses those datasets to create intelligent systems. |\n\nIn short, **Big Data is about the data itself and the infrastructure needed to handle it, while machine learning is about the techniques that learn from that data to produce insights or actions.**",
+        "sources": [
+          {
+            "page": 1,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 10,
+            "source": "bigdata.pdf"
+          },
+          {
+            "page": 4,
+            "source": "bigdata.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "\"Draw a diagram of the OS process states.\""
+      },
+      {
+        "role": "assistant",
+        "content": "**OS Process State Diagram**\n\n```\n          +--------+          +--------+\n          |  New   |  ---->   | Ready  |\n          +--------+          +--------+\n                |                 |\n                |                 v\n                |            +--------+\n                |            | Running|\n                |            +--------+\n                |                 |\n                |                 v\n                |            +--------+\n                |            |Waiting |\n                |            +--------+\n                |                 |\n                |                 v\n                |            +--------+\n                |            | Ready  |\n                |            +--------+\n                |                 ^\n                |                 |\n                +-----------------+\n```\n\n**Transitions (from context)**  \n- New → Ready (Admitted)  \n- Ready → Running (Scheduler Dispatch)  \n- Running → Waiting (I/O Wait)  \n- Waiting → Ready (I/O Completion)  \n- Running → Ready (Interrupt)",
+        "sources": [
+          {
+            "page": 6,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 6,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 8,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 8,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 1,
+            "source": "os1.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "draw a diagram for deadlocks"
+      },
+      {
+        "role": "assistant",
+        "content": "**Deadlock diagram (Wait‑for graph)**  \n\n```\n   P1  ──►  P2\n   ▲          │\n   │          ▼\n   └───────►  P3\n```\n\nThe arrows show that each process is waiting for another.  \nBecause the graph contains a cycle (P1 → P2 → P3 → P1), a deadlock exists.",
+        "sources": [
+          {
+            "page": 1,
+            "source": "os4-3.pdf"
+          },
+          {
+            "page": 2,
+            "source": "os4-3.pdf"
+          },
+          {
+            "page": 20,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 20,
+            "source": "os2.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "draw a diagram for html"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 6,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 10,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 14,
+            "source": "webtechnologies3.pdf"
+          },
+          {
+            "page": 5,
+            "source": "webtechnologies1.pdf"
+          },
+          {
+            "page": 12,
+            "source": "webtechnologies1.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "Draw a diagram explaining the process states in Operating System."
+      },
+      {
+        "role": "assistant",
+        "content": "**Process‑State Diagram**\n\n```\n          +-----------+\n          |   New     |\n          | (creation)|\n          +-----------+\n                |\n                |  (Admitted)\n                v\n          +-----------+\n          |   Ready   |\n          | (waiting  |\n          |  for CPU) |\n          +-----------+\n                |\n                |  (Scheduler Dispatch)\n                v\n          +-----------+\n          |  Running  |\n          | (CPU time)|\n          +-----------+\n          /   |   \\\n         /    |    \\\n        /     |     \\\n(Interrupt)  |  (I/O Wait)\n      |      |        |\n      v      v        v\n+-----------+  +-----------+\n|   Ready   |  |  Waiting  |\n| (after    |  | (I/O wait)|\n| interrupt)|  +-----------+\n+-----------+        |\n        \\            |  (I/O Completion)\n         \\           v\n          \\   +-----------+\n           \\  |   Ready   |\n            \\ | (I/O done)|\n             \\+-----------+\n```\n\n- **New → Ready**: Process is created and loaded into memory.  \n- **Ready → Running**: Scheduler assigns CPU.  \n- **Running → Waiting**: Process requests I/O.  \n- **Waiting → Ready**: I/O completes.  \n- **Running → Ready**: CPU is preempted (interrupt).  \n\nThis diagram shows the typical life cycle of a process in an operating system.",
+        "sources": [
+          {
+            "page": 6,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 6,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 8,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 8,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 12,
+            "source": "os2.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "explain about multi threading models"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 18,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 18,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 20,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 20,
+            "source": "os2.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "explain about multithreading models"
+      },
+      {
+        "role": "assistant",
+        "content": "I couldn't find enough information in the uploaded documents.",
+        "sources": [
+          {
+            "page": 18,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 18,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 20,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 20,
+            "source": "os2.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "explain scheduling concepts"
+      },
+      {
+        "role": "assistant",
+        "content": "**CPU Scheduling – What It Is and Why It Matters**\n\n- **Purpose**  \n  CPU scheduling decides which process gets the CPU next when several processes are waiting. It keeps the CPU busy, reduces idle time, and improves overall system performance.\n\n- **Key Points**  \n  - Only one process can run on the CPU at a time.  \n  - The operating system chooses the next process.  \n  - Good scheduling increases CPU utilization and system productivity.  \n  - It allows another process to run while one is waiting for I/O.  \n  - It is the foundation of multiprogramming operating systems.\n\n- **Real‑Time Example**  \n  Think of a teacher who checks answer sheets one by one. The teacher decides which sheet to check next, just like the OS decides which process to run next.\n\n- **Preemptive Scheduling**  \n  - Uses a fixed time quantum (time slice).  \n  - Suitable for time‑sharing and multitasking systems.  \n  - Gives each process an equal share of CPU time.  \n  - Prevents starvation and ensures fair scheduling.  \n  - Provides good response time and is easy to implement.",
+        "sources": [
+          {
+            "page": 24,
+            "source": "os2-2.pdf"
+          },
+          {
+            "page": 24,
+            "source": "os2.pdf"
+          },
+          {
+            "page": 11,
+            "source": "os2-3.pdf"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "give me a quiz on web technologies"
+      },
+      {
+        "role": "assistant",
+        "content": "**Web Technologies Quiz**\n\n| # | Question | Options | Correct Answer |\n|---|----------|---------|----------------|\n| 1 | Which component of the web server architecture receives HTTP requests from the client and sends responses back? | A) Client Tier<br>B) Web Server<br>C) Application Server<br>D) Database Server | B) Web Server |\n| 2 | What is the primary role of the Application Server? | A) Store and manage application data<br>B) Process business logic and generate dynamic pages<br>C) Accept HTTP requests from browsers<br>D) Serve static files directly | B) Process business logic and generate dynamic pages |\n| 3 | Which of the following is NOT listed as a leading web server in the provided material? | A) Apache HTTP Server<br>B) Nginx<br>C) IIS (Microsoft) <br>D) Apache | B) Nginx |\n| 4 | In a 3‑Tier Architecture, which component typically handles database operations? | A) Client Tier<br>B) Web Server<br>C) Application Server<br>D) Database Server | D) Database Server |\n| 5 | Which scripting language is described as “PHP: Hypertext Preprocessor” and is used for server‑side scripting? | A) JavaScript<br>B) Python<br>C) PHP<br>D) Ruby | C) PHP |\n| 6 | Which database server is mentioned in the context? | A) PostgreSQL<br>B) Oracle Database<br>C) MongoDB<br>D) SQLite | B) Oracle Database |\n| 7 | What is the main advantage of PHP mentioned in the material? | A) It runs only on Windows<br>B) It is proprietary and expensive<br>C) It is free, open‑source, and runs on many platforms<br>D) It cannot interact with databases | C) It is free, open‑source, and runs on many platforms |\n\n**Answer Key**\n\n1. B  \n2. B  \n3. B  \n4. D  \n5. C  \n6. B  \n7. C",
+        "sources": [
+          {
+            "page": 3,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 1,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 2,
+            "source": "webtechnologies2.pdf"
+          },
+          {
+            "page": 6,
+            "source": "webtechnologies2.pdf"
+          }
+        ]
+      }
+    ]
+  }
+]
