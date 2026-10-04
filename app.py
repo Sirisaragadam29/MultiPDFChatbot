@@ -6,7 +6,7 @@ import streamlit as st
 import uuid
 from pathlib import Path
 
-API_URL = "http://127.0.0.1:5000"
+API_URL = "https://multipdfchatbot-backend.onrender.com"
 
 HISTORY_FILE = Path("chat_history.json")
 
