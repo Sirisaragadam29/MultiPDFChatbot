@@ -19,4 +19,7 @@ openai
 
 streamlit
 requests
+
 gunicorn
+
+langchain-groq
